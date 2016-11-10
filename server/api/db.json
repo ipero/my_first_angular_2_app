@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": 2,
+      "img": "number-2-blue-icon.png",
+      "name": "Item 1",
+      "description": "Item 1 has this description!",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "img": "number-3-icon.png",
+      "name": "Item 3",
+      "description": "This is a lovely item",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "img": "number-3-icon.png",
+      "name": "Item 3",
+      "description": "This is a lovely item",
+      "featured": false
+    }
+  ]
+}
