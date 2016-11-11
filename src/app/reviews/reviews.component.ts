@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-// import { Reviews } from '../shared/reviews.model'
+import { ReviewsService, Review } from '../shared'
 
 @Component({
   selector: 'app-review',
@@ -11,7 +11,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit{
-  constructor() { }
+  reviewItems: Review[];
+  constructor(private reviewService: ReviewsService) { }
   title = "Great reviews"
-  ngOnInit() {}
+  ngOnInit() {
+    this.reviewItems = this.reviewService.reviews;
+  }
 }

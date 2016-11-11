@@ -9,19 +9,19 @@ export const reviews = [
   {
     "id": 1,
     "name": "John P.",
-    "review": "You should buy it!",
+    "text": "You should buy it!",
     "featured": true
   },
   {
     "id": 2,
     "name": "Peter A.",
-    "review": "This is a best app!",
+    "text": "This is a best app!",
     "featured": false
   },
   {
     "id": 3,
     "name": "Mark V.",
-    "Review": "This is a lovely product",
+    "text": "No, it doesn't work!!!!!",
     "featured": false
   }
 ];
