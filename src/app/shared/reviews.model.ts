@@ -1,5 +1,6 @@
 export interface Review {
   id: number;
+  img?: string;
   name?: string;
   review?: string;
   featured?: boolean;

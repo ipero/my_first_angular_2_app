@@ -11,10 +11,20 @@ import { ReviewsService, Review } from '../shared'
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit{
-  reviewItems: Review[];
-  constructor(private reviewService: ReviewsService) { }
-  title = "Great reviews"
+  reviews: Array<Review>;
+  selectedItem: Review;
+
+  constructor(
+    private itemsService: ReviewsService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
   ngOnInit() {
-    this.reviewItems = this.reviewService.reviews;
+    this.reviewsService.loadItems()
+      .map(reviews => this.reviews = reviews)
+      .subscribe(this.diffFeaturedReviews.bind(this));
   }
+
+  
 }
