@@ -15,16 +15,37 @@ export class ReviewsComponent implements OnInit{
   selectedItem: Review;
 
   constructor(
-    private itemsService: ReviewsService,
+    private reviewsService: ReviewsService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.reviewsService.loadItems()
+    this.reviewsService.loadReviews()
       .map(reviews => this.reviews = reviews)
       .subscribe(this.diffFeaturedReviews.bind(this));
   }
 
-  
+  diffFeaturedReviews(reviews: Review[]) {
+    // const supposedlyFeaturedID = this.route.snapshot.firstChild.params['id'];
+    //
+    // if (supposedlyFeaturedID) {
+    //   let supposedlyFeaturedReview = reviews.find(review => review.id === +supposedlyFeaturedID);
+    //
+    //   if (!supposedlyFeaturedReview.featured) {
+    //     this.setReviewAsFeatured(supposedlyFeaturedReview);
+    //   }
+    // }
+  }
+
+  setReviewAsFeatured(review: Review) {
+    // this.unsetFeaturedReview();
+    //
+    // this.saveReview(Object.assign({}, review, {featured: true}));
+    //
+    // this.router.navigate(['featured', review.id], {relativeTo: this.route});
+  }
+
+
+
 }

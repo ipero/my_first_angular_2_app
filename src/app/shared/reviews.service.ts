@@ -12,27 +12,27 @@ const HEADER = { headers: new Headers({ 'Content-Type': 'application/json' }) };
 export class ReviewsService {
   constructor(private http: Http) {}
 
-  loadItems() {
+  loadReviews() {
     return this.http.get(BASE_URL)
       .map(res => res.json())
       .map(reviews => reviews.map(review => Object.assign({}, review, {img: `${IMG_URL}${review.img}`})));
   }
 
-  loadItem(id) {
+  loadReview(id) {
     return this.http.get(`${BASE_URL}${id}`)
       .map(res => res.json());
   }
 
-  saveItem(review: Review) {
-    return (review.id) ? this.updateItem(review) : this.createItem(review);
+  saveReview(review: Review) {
+    return (review.id) ? this.updateReview(review) : this.createReview(review);
   }
 
-  createItem(review: Review) {
+  createReview(review: Review) {
     return this.http.post(`${BASE_URL}`, JSON.stringify(review), HEADER)
       .map(res => res.json());
   }
 
-  updateItem(review: Review) {
+  updateReview(review: Review) {
     delete review.img;
 
     return this.http.patch(`${BASE_URL}${review.id}`, JSON.stringify(review), HEADER)
@@ -40,7 +40,7 @@ export class ReviewsService {
       .map(i => Object.assign({}, i, {img: `${IMG_URL}${i.img}`}));
   }
 
-  deleteItem(review: Review) {
+  deleteReview(review: Review) {
     return this.http.delete(`${BASE_URL}${review.id}`)
       .map(res => res.json());
   }

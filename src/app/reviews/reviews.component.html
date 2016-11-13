@@ -3,7 +3,7 @@
   {{review.name}}
 </div> -->
 
-<div *ngFor="let review of reviewItems" (click)="selected.emit(review)"
+<div *ngFor="let review of reviews" (click)="selected.emit(review)"
      class="item-card mdl-card mdl-shadow--2dp">
   <div>
     <div class="mdl-card__title">
